@@ -1,0 +1,28 @@
+C:\Users\User\source\repos\Labirintus\Labirintus\bin\Debug\net8.0\Labirintus.exe
+C:\Users\User\source\repos\Labirintus\Labirintus\bin\Debug\net8.0\Labirintus.deps.json
+C:\Users\User\source\repos\Labirintus\Labirintus\bin\Debug\net8.0\Labirintus.runtimeconfig.json
+C:\Users\User\source\repos\Labirintus\Labirintus\bin\Debug\net8.0\Labirintus.dll
+C:\Users\User\source\repos\Labirintus\Labirintus\bin\Debug\net8.0\Labirintus.pdb
+C:\Users\User\source\repos\Labirintus\Labirintus\obj\Debug\net8.0\Labirintus.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\Labirintus\Labirintus\obj\Debug\net8.0\Labirintus.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Labirintus\Labirintus\obj\Debug\net8.0\Labirintus.AssemblyInfo.cs
+C:\Users\User\source\repos\Labirintus\Labirintus\obj\Debug\net8.0\Labirintus.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Labirintus\Labirintus\obj\Debug\net8.0\Labirintus.dll
+C:\Users\User\source\repos\Labirintus\Labirintus\obj\Debug\net8.0\refint\Labirintus.dll
+C:\Users\User\source\repos\Labirintus\Labirintus\obj\Debug\net8.0\Labirintus.pdb
+C:\Users\User\source\repos\Labirintus\Labirintus\obj\Debug\net8.0\Labirintus.genruntimeconfig.cache
+C:\Users\User\source\repos\Labirintus\Labirintus\obj\Debug\net8.0\ref\Labirintus.dll
+C:\Users\User\source\repos\Labirintus játék\Labirintus\bin\Debug\net8.0\Labirintus.exe
+C:\Users\User\source\repos\Labirintus játék\Labirintus\bin\Debug\net8.0\Labirintus.deps.json
+C:\Users\User\source\repos\Labirintus játék\Labirintus\bin\Debug\net8.0\Labirintus.runtimeconfig.json
+C:\Users\User\source\repos\Labirintus játék\Labirintus\bin\Debug\net8.0\Labirintus.dll
+C:\Users\User\source\repos\Labirintus játék\Labirintus\bin\Debug\net8.0\Labirintus.pdb
+C:\Users\User\source\repos\Labirintus játék\Labirintus\obj\Debug\net8.0\Labirintus.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\Labirintus játék\Labirintus\obj\Debug\net8.0\Labirintus.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Labirintus játék\Labirintus\obj\Debug\net8.0\Labirintus.AssemblyInfo.cs
+C:\Users\User\source\repos\Labirintus játék\Labirintus\obj\Debug\net8.0\Labirintus.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Labirintus játék\Labirintus\obj\Debug\net8.0\Labirintus.dll
+C:\Users\User\source\repos\Labirintus játék\Labirintus\obj\Debug\net8.0\refint\Labirintus.dll
+C:\Users\User\source\repos\Labirintus játék\Labirintus\obj\Debug\net8.0\Labirintus.pdb
+C:\Users\User\source\repos\Labirintus játék\Labirintus\obj\Debug\net8.0\Labirintus.genruntimeconfig.cache
+C:\Users\User\source\repos\Labirintus játék\Labirintus\obj\Debug\net8.0\ref\Labirintus.dll
