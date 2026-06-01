@@ -1,153 +1,111 @@
-﻿using Labyrinth.Editor.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Labyrinth.Editor.Services
 {
     internal class MapValidator
     {
-        private bool OpensLeft(char tile)
+        public bool IsValidChar(char c)
         {
-            return tile == '═' ||
-                   tile == '╬' ||
-                   tile == '╣' ||
-                   tile == '╗' ||
-                   tile == '╝' ||
-                   tile == '╦' ||
-                   tile == '╩';
+            return c == '.' || c == '█' || IsRoad(c);
         }
 
-        private bool OpensRight(char tile)
+        public bool IsRoad(char c)
         {
-            return tile == '═' ||
-                   tile == '╬' ||
-                   tile == '╠' ||
-                   tile == '╔' ||
-                   tile == '╚' ||
-                   tile == '╦' ||
-                   tile == '╩';
+            return c == '╬' || c == '═' || c == '╦' || c == '╩' ||
+                   c == '║' || c == '╣' || c == '╠' ||
+                   c == '╗' || c == '╝' || c == '╚' || c == '╔';
         }
 
-        private bool OpensUp(char tile)
+        public bool CanGo(char c, int dr, int dc)
         {
-            return tile == '║' ||
-                   tile == '╬' ||
-                   tile == '╩' ||
-                   tile == '╣' ||
-                   tile == '╠' ||
-                   tile == '╝' ||
-                   tile == '╚';
-        }
+            if (dr == -1 && dc == 0)
+            {
+                return c == '╬' || c == '╩' || c == '║' ||
+                       c == '╣' || c == '╠' || c == '╝' || c == '╚';
+            }
 
-        private bool OpensDown(char tile)
-        {
-            return tile == '║' ||
-                   tile == '╬' ||
-                   tile == '╦' ||
-                   tile == '╣' ||
-                   tile == '╠' ||
-                   tile == '╗' ||
-                   tile == '╔';
-        }
+            if (dr == 1 && dc == 0)
+            {
+                return c == '╬' || c == '╦' || c == '║' ||
+                       c == '╣' || c == '╠' || c == '╗' || c == '╔';
+            }
 
-        private bool IsRoadCharacter(char tile)
-        {
-            return tile == '═' ||
-                   tile == '║' ||
-                   tile == '╔' ||
-                   tile == '╗' ||
-                   tile == '╚' ||
-                   tile == '╝' ||
-                   tile == '╦' ||
-                   tile == '╩' ||
-                   tile == '╠' ||
-                   tile == '╣' ||
-                   tile == '╬';
-        }
+            if (dr == 0 && dc == -1)
+            {
+                return c == '╬' || c == '═' || c == '╦' ||
+                       c == '╩' || c == '╣' || c == '╗' || c == '╝';
+            }
 
-        private bool IsAllowedCharacter(char tile)
-        {
-            return tile == '.' ||
-                   tile == '█' ||
-                   IsRoadCharacter(tile);
+            if (dr == 0 && dc == 1)
+            {
+                return c == '╬' || c == '═' || c == '╦' ||
+                       c == '╩' || c == '╠' || c == '╚' || c == '╔';
+            }
+
+            return false;
         }
 
         public int GetRoomNumber(char[,] map)
         {
-            int roomNumber = 0;
+            int count = 0;
 
-            int height = map.GetLength(0);
-            int width = map.GetLength(1);
-
-            for (int row = 0; row < height; row++)
+            for (int row = 0; row < map.GetLength(0); row++)
             {
-                for (int col = 0; col < width; col++)
+                for (int col = 0; col < map.GetLength(1); col++)
                 {
                     if (map[row, col] == '█')
                     {
-                        roomNumber++;
+                        count++;
                     }
                 }
             }
 
-            return roomNumber;
+            return count;
         }
 
         public int GetSuitableEntrance(char[,] map)
         {
-            int entranceNumber = 0;
+            int count = 0;
 
-            int height = map.GetLength(0);
-            int width = map.GetLength(1);
+            int rows = map.GetLength(0);
+            int cols = map.GetLength(1);
 
-            // Bal oldal
-            for (int row = 0; row < height; row++)
+            for (int col = 0; col < cols; col++)
             {
-                if (OpensLeft(map[row, 0]))
+                if (IsRoad(map[0, col]) && CanGo(map[0, col], -1, 0))
                 {
-                    entranceNumber++;
+                    count++;
+                }
+
+                if (IsRoad(map[rows - 1, col]) && CanGo(map[rows - 1, col], 1, 0))
+                {
+                    count++;
                 }
             }
 
-            // Jobb oldal
-            for (int row = 0; row < height; row++)
+            for (int row = 0; row < rows; row++)
             {
-                if (OpensRight(map[row, width - 1]))
+                if (IsRoad(map[row, 0]) && CanGo(map[row, 0], 0, -1))
                 {
-                    entranceNumber++;
+                    count++;
+                }
+
+                if (IsRoad(map[row, cols - 1]) && CanGo(map[row, cols - 1], 0, 1))
+                {
+                    count++;
                 }
             }
 
-            // Felső oldal
-            for (int col = 0; col < width; col++)
-            {
-                if (OpensUp(map[0, col]))
-                {
-                    entranceNumber++;
-                }
-            }
-
-            // Alsó oldal
-            for (int col = 0; col < width; col++)
-            {
-                if (OpensDown(map[height - 1, col]))
-                {
-                    entranceNumber++;
-                }
-            }
-
-            return entranceNumber;
+            return count;
         }
 
         public bool IsInvalidElement(char[,] map)
         {
-            int height = map.GetLength(0);
-            int width = map.GetLength(1);
-
-            for (int row = 0; row < height; row++)
+            for (int row = 0; row < map.GetLength(0); row++)
             {
-                for (int col = 0; col < width; col++)
+                for (int col = 0; col < map.GetLength(1); col++)
                 {
-                    if (!IsAllowedCharacter(map[row, col]))
+                    if (!IsValidChar(map[row, col]))
                     {
                         return true;
                     }
@@ -161,89 +119,57 @@ namespace Labyrinth.Editor.Services
         {
             List<string> unavailables = new List<string>();
 
-            int height = map.GetLength(0);
-            int width = map.GetLength(1);
+            int rows = map.GetLength(0);
+            int cols = map.GetLength(1);
 
-            for (int row = 0; row < height; row++)
+            int[] dr = { -1, 1, 0, 0 };
+            int[] dc = { 0, 0, -1, 1 };
+
+            for (int row = 0; row < rows; row++)
             {
-                for (int col = 0; col < width; col++)
+                for (int col = 0; col < cols; col++)
                 {
-                    char current = map[row, col];
-
-                    if (!IsRoadCharacter(current))
+                    if (!IsRoad(map[row, col]))
                     {
                         continue;
                     }
 
-                    bool canBeReached = false;
+                    bool hasConnection = false;
 
-                    // Balról elérhető?
-                    if (col > 0)
+                    for (int i = 0; i < 4; i++)
                     {
-                        char left = map[row, col - 1];
+                        int newRow = row + dr[i];
+                        int newCol = col + dc[i];
 
-                        if (OpensRight(left) && OpensLeft(current))
+                        if (newRow < 0 || newRow >= rows || newCol < 0 || newCol >= cols)
                         {
-                            canBeReached = true;
+                            if (CanGo(map[row, col], dr[i], dc[i]))
+                            {
+                                hasConnection = true;
+                            }
+
+                            continue;
+                        }
+
+                        char neighbour = map[newRow, newCol];
+
+                        if (IsRoad(neighbour) &&
+                            CanGo(map[row, col], dr[i], dc[i]) &&
+                            CanGo(neighbour, -dr[i], -dc[i]))
+                        {
+                            hasConnection = true;
+                            break;
+                        }
+
+                        if (neighbour == '█' &&
+                            CanGo(map[row, col], dr[i], dc[i]))
+                        {
+                            hasConnection = true;
+                            break;
                         }
                     }
 
-                    // Jobbról elérhető?
-                    if (col < width - 1)
-                    {
-                        char right = map[row, col + 1];
-
-                        if (OpensLeft(right) && OpensRight(current))
-                        {
-                            canBeReached = true;
-                        }
-                    }
-
-                    // Fentről elérhető?
-                    if (row > 0)
-                    {
-                        char up = map[row - 1, col];
-
-                        if (OpensDown(up) && OpensUp(current))
-                        {
-                            canBeReached = true;
-                        }
-                    }
-
-                    // Lentről elérhető?
-                    if (row < height - 1)
-                    {
-                        char down = map[row + 1, col];
-
-                        if (OpensUp(down) && OpensDown(current))
-                        {
-                            canBeReached = true;
-                        }
-                    }
-
-                    // Ha a pálya szélén kifelé nyit, akkor bejárat/kijárat,
-                    // tehát kívülről elérhetőnek számít.
-                    if (col == 0 && OpensLeft(current))
-                    {
-                        canBeReached = true;
-                    }
-
-                    if (col == width - 1 && OpensRight(current))
-                    {
-                        canBeReached = true;
-                    }
-
-                    if (row == 0 && OpensUp(current))
-                    {
-                        canBeReached = true;
-                    }
-
-                    if (row == height - 1 && OpensDown(current))
-                    {
-                        canBeReached = true;
-                    }
-
-                    if (!canBeReached)
+                    if (!hasConnection)
                     {
                         unavailables.Add(row + ":" + col);
                     }
@@ -255,41 +181,46 @@ namespace Labyrinth.Editor.Services
 
         public bool HasInvalidRooms(char[,] map)
         {
-            int height = map.GetLength(0);
-            int width = map.GetLength(1);
+            int rows = map.GetLength(0);
+            int cols = map.GetLength(1);
 
-            for (int row = 0; row < height; row++)
+            int[] dr = { -1, 1, 0, 0 };
+            int[] dc = { 0, 0, -1, 1 };
+
+            for (int row = 0; row < rows; row++)
             {
-                for (int col = 0; col < width; col++)
+                for (int col = 0; col < cols; col++)
                 {
-                    if (map[row, col] == '█')
+                    if (map[row, col] != '█')
                     {
-                        bool hasConnection = false;
+                        continue;
+                    }
 
-                        if (col > 0 && OpensRight(map[row, col - 1]))
+                    bool hasConnection = false;
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        int newRow = row + dr[i];
+                        int newCol = col + dc[i];
+
+                        if (newRow < 0 || newRow >= rows || newCol < 0 || newCol >= cols)
+                        {
+                            continue;
+                        }
+
+                        char neighbour = map[newRow, newCol];
+
+                        if (IsRoad(neighbour) &&
+                            CanGo(neighbour, -dr[i], -dc[i]))
                         {
                             hasConnection = true;
+                            break;
                         }
+                    }
 
-                        if (col < width - 1 && OpensLeft(map[row, col + 1]))
-                        {
-                            hasConnection = true;
-                        }
-
-                        if (row > 0 && OpensDown(map[row - 1, col]))
-                        {
-                            hasConnection = true;
-                        }
-
-                        if (row < height - 1 && OpensUp(map[row + 1, col]))
-                        {
-                            hasConnection = true;
-                        }
-
-                        if (!hasConnection)
-                        {
-                            return true;
-                        }
+                    if (!hasConnection)
+                    {
+                        return true;
                     }
                 }
             }
@@ -297,25 +228,140 @@ namespace Labyrinth.Editor.Services
             return false;
         }
 
-        // Ezek azért maradhatnak, hogy a MainWindow-ban egyszerűbb legyen a használat.
-        public bool HasRoom(MapModel map)
+        public char[,] GenerateLabyrinth(List<string> positionsList)
         {
-            return GetRoomNumber(map.Map) > 0;
+            int maxRow = 0;
+            int maxCol = 0;
+
+            List<int[]> positions = new List<int[]>();
+
+            foreach (string position in positionsList)
+            {
+                string[] parts = position.Split(':');
+
+                int row = int.Parse(parts[0]);
+                int col = int.Parse(parts[1]);
+
+                positions.Add(new int[] { row, col });
+
+                if (row > maxRow)
+                {
+                    maxRow = row;
+                }
+
+                if (col > maxCol)
+                {
+                    maxCol = col;
+                }
+            }
+
+            char[,] map = new char[maxRow + 1, maxCol + 1];
+
+            for (int row = 0; row < map.GetLength(0); row++)
+            {
+                for (int col = 0; col < map.GetLength(1); col++)
+                {
+                    map[row, col] = '.';
+                }
+            }
+
+            foreach (int[] pos in positions)
+            {
+                int row = pos[0];
+                int col = pos[1];
+
+                bool up = ContainsPosition(positions, row - 1, col);
+                bool down = ContainsPosition(positions, row + 1, col);
+                bool left = ContainsPosition(positions, row, col - 1);
+                bool right = ContainsPosition(positions, row, col + 1);
+
+                map[row, col] = GetRoadCharacter(up, down, left, right);
+            }
+
+            return map;
         }
 
-        public bool HasExit(MapModel map)
+        private bool ContainsPosition(List<int[]> positions, int row, int col)
         {
-            return GetSuitableEntrance(map.Map) > 0;
+            foreach (int[] pos in positions)
+            {
+                if (pos[0] == row && pos[1] == col)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
-        public bool HasInvalidCharacters(MapModel map)
+        private char GetRoadCharacter(bool up, bool down, bool left, bool right)
         {
-            return IsInvalidElement(map.Map);
-        }
+            if (up && down && left && right)
+            {
+                return '╬';
+            }
 
-        public bool HasInvalidRooms(MapModel map)
-        {
-            return HasInvalidRooms(map.Map);
+            if (!up && !down && left && right)
+            {
+                return '═';
+            }
+
+            if (up && down && !left && !right)
+            {
+                return '║';
+            }
+
+            if (!up && down && left && right)
+            {
+                return '╦';
+            }
+
+            if (up && !down && left && right)
+            {
+                return '╩';
+            }
+
+            if (up && down && left && !right)
+            {
+                return '╣';
+            }
+
+            if (up && down && !left && right)
+            {
+                return '╠';
+            }
+
+            if (!up && down && left && !right)
+            {
+                return '╗';
+            }
+
+            if (up && !down && left && !right)
+            {
+                return '╝';
+            }
+
+            if (up && !down && !left && right)
+            {
+                return '╚';
+            }
+
+            if (!up && down && !left && right)
+            {
+                return '╔';
+            }
+
+            if (left || right)
+            {
+                return '═';
+            }
+
+            if (up || down)
+            {
+                return '║';
+            }
+
+            return '╬';
         }
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("petikemetodusok")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00c32d86a0306ba2bf9a3df128e41fb76c506390")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a599eadd216246f4a534eb6317bd3d5bfa31f1c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("petikemetodusok")]
 [assembly: System.Reflection.AssemblyTitleAttribute("petikemetodusok")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
