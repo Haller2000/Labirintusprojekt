@@ -1,0 +1,21 @@
+{
+  "NewMap": "New Map",
+  "Save": "Save",
+  "Load": "Load",
+  "Validate": "Validate",
+  "Width": "Width",
+  "Height": "Height",
+  "InvalidMap": "The map is invalid!",
+  "NoMap": "Create or load a map before saving.",
+  "NoRoom": "The map cannot be saved because it does not contain a treasure room.",
+  "NoExit": "The map cannot be saved because it does not contain an entrance or exit.",
+  "InvalidCharacter": "The map contains an invalid character.",
+  "InvalidRoom": "There is a room that is not connected to any corridor.",
+  "UnavailableElement": "The map contains an isolated corridor element.",
+  "SaveSuccess": "The map has been saved successfully.",
+  "Positions": "Positions",
+  "MapSize": "Size",
+  "RoomCount": "Rooms",
+  "ExitCount": "Exits",
+  "SelectedTile": "Selected tile"
+}

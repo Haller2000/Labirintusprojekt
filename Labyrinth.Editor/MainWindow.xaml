@@ -1,0 +1,137 @@
+﻿<Window x:Class="Labyrinth.Editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labyrinth.Editor"
+        mc:Ignorable="d"
+        Title="Labyrinth Editor"
+        Height="720"
+        Width="1280">
+
+    <Grid Background="#1E1E1E">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Felső menü -->
+
+        <StackPanel Orientation="Horizontal"
+                    Margin="10"
+                    Grid.Row="0">
+
+            <TextBlock x:Name="txtWidthLabel"
+                       Text="Szélesség"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       Margin="0,0,5,0"/>
+
+            <TextBox x:Name="tbWidth"
+                     Width="60"
+                     Text="20"
+                     Margin="0,0,10,0"/>
+
+            <TextBlock x:Name="txtHeightLabel"
+                       Text="Magasság"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       Margin="0,0,5,0"/>
+
+            <TextBox x:Name="tbHeight"
+                     Width="60"
+                     Text="10"
+                     Margin="0,0,10,0"/>
+
+            <Button x:Name="btnNewMap"
+                    Content="Új pálya"
+                    Click="BtnNewMap_Click"
+                    Margin="0,0,10,0"/>
+
+            <Button x:Name="btnSave"
+                    Content="Mentés"
+                    Click="BtnSave_Click"
+                    Margin="0,0,10,0"/>
+
+            <Button x:Name="btnLoad"
+                    Content="Betöltés"
+                    Click="BtnLoad_Click"
+                    Margin="0,0,10,0"/>
+
+            <ComboBox x:Name="cbLanguage"
+                      Width="120"
+                      SelectionChanged="CbLanguage_SelectionChanged">
+
+                <ComboBoxItem Content="Magyar"/>
+                <ComboBoxItem Content="English"/>
+
+            </ComboBox>
+
+        </StackPanel>
+
+        <!-- Középső rész -->
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Tile selector -->
+
+            <StackPanel x:Name="TilePanel"
+                        Grid.Column="0"
+                        Margin="10"/>
+
+            <!-- Pálya -->
+
+            <ScrollViewer Grid.Column="1"
+                          Margin="10">
+
+                <UniformGrid x:Name="MapGrid"/>
+
+            </ScrollViewer>
+
+        </Grid>
+
+        <!-- StatusBar -->
+
+        <StatusBar Grid.Row="2"
+                   Height="32"
+                   Background="#2D2D30"
+                   Foreground="White">
+
+            <TextBlock x:Name="txtMapSize"
+                       Margin="10,0"
+                       FontWeight="Bold"
+                       Text="Méret: 0x0"/>
+
+            <Separator Margin="10,0"/>
+
+            <TextBlock x:Name="txtRoomCount"
+                       Margin="10,0"
+                       FontWeight="Bold"
+                       Text="Termek: 0"/>
+
+            <Separator Margin="10,0"/>
+
+            <TextBlock x:Name="txtExitCount"
+                       Margin="10,0"
+                       FontWeight="Bold"
+                       Text="Kijáratok: 0"/>
+
+            <Separator Margin="10,0"/>
+
+            <TextBlock x:Name="txtSelectedTile"
+                       Margin="10,0"
+                       FontWeight="Bold"
+                       Text="Kiválasztott elem: ."/>
+
+        </StatusBar>
+
+    </Grid>
+
+</Window>

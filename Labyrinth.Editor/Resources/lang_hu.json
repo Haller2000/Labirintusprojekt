@@ -1,0 +1,21 @@
+{
+  "NewMap": "Új pálya",
+  "Save": "Mentés",
+  "Load": "Betöltés",
+  "Validate": "Ellenőrzés",
+  "Width": "Szélesség",
+  "Height": "Magasság",
+  "InvalidMap": "A pálya hibás!",
+  "NoMap": "A mentés előtt hozz létre vagy tölts be egy pályát.",
+  "NoRoom": "A pálya nem menthető, mert nem tartalmaz kincses termet.",
+  "NoExit": "A pálya nem menthető, mert nincs rajta kijárat vagy bejárat.",
+  "InvalidCharacter": "A pálya nem menthető, mert érvénytelen karaktert tartalmaz.",
+  "InvalidRoom": "A pálya nem menthető, mert van olyan terem, amelyhez nem csatlakozik járat.",
+  "UnavailableElement": "A pálya nem menthető, mert elszigetelt járatelem található.",
+  "SaveSuccess": "A pálya sikeresen el lett mentve.",
+  "Positions": "Pozíciók",
+  "MapSize": "Méret",
+  "RoomCount": "Termek",
+  "ExitCount": "Kijáratok",
+  "SelectedTile": "Kiválasztott elem"
+}
