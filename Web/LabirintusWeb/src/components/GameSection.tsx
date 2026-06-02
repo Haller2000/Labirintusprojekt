@@ -1,6 +1,9 @@
 import type { Language } from '../App';
 import ImagePlaceholder from './ImagePlaceholder';
 
+import jatekImg from '../../Images/jatek.png';
+import jatekFedettImg from '../../Images/jatekfedett.png';
+
 type GameSectionProps = {
   language: Language;
 };
@@ -12,48 +15,48 @@ function GameSection({ language }: GameSectionProps) {
       intro:
         'A játék célja az összes kincses terem felfedezése, majd a kijáraton keresztüli menekülés.',
       imageTitle: 'Játék főképernyő',
-      imageDescription: 'Ide kerül a játék közbeni képernyőkép.',
+      imageDescription: 'A játék teljes térképes nézete.',
+      fogTitle: 'Fedett térkép mód',
+      fogDescription: 'A játékos csak a már bejárt részeket látja.',
       controls: 'Irányítás',
       modes: 'Játékmódok',
       save: 'Mentés és betöltés',
-      up: 'Felfelé mozgás',
-      left: 'Balra mozgás',
-      down: 'Lefelé mozgás',
-      right: 'Jobbra mozgás',
-      saveKey: 'Mentés',
-      loadKey: 'Betöltés',
-      exitKey: 'Kilépés',
-      fullMap: 'Teljes térkép mód',
-      fogMap: 'Fedett térkép mód',
-      timeLimit: '120 másodperces időkorlát',
-      fogTitle: 'Fedett térkép mód',
-      fogDescription: 'A vaktérkép működésének bemutatása.',
       saveText:
         'A játék támogatja a mentést és a visszatöltést. A játékállapot egy .sav állományba kerül mentésre.',
+      items: [
+        'W - Felfelé mozgás',
+        'A - Balra mozgás',
+        'S - Lefelé mozgás',
+        'D - Jobbra mozgás',
+        'F5 - Mentés',
+        'F9 - Betöltés',
+        'ESC - Kilépés',
+      ],
+      modesList: ['Teljes térkép mód', 'Fedett térkép mód', '120 másodperces időkorlát'],
     },
     en: {
       title: 'Game',
       intro:
         'The goal of the game is to discover every treasure room and then escape through an exit.',
       imageTitle: 'Game screen',
-      imageDescription: 'Place a screenshot of the running game here.',
+      imageDescription: 'The full map view of the game.',
+      fogTitle: 'Fog of war mode',
+      fogDescription: 'The player can only see the already explored parts.',
       controls: 'Controls',
       modes: 'Game modes',
       save: 'Saving and loading',
-      up: 'Move up',
-      left: 'Move left',
-      down: 'Move down',
-      right: 'Move right',
-      saveKey: 'Save',
-      loadKey: 'Load',
-      exitKey: 'Exit',
-      fullMap: 'Full map mode',
-      fogMap: 'Fog of war mode',
-      timeLimit: '120 second time limit',
-      fogTitle: 'Fog of war mode',
-      fogDescription: 'A screenshot showing the hidden map mode.',
       saveText:
         'The game supports saving and loading. The current game state is saved into a .sav file.',
+      items: [
+        'W - Move up',
+        'A - Move left',
+        'S - Move down',
+        'D - Move right',
+        'F5 - Save',
+        'F9 - Load',
+        'ESC - Exit',
+      ],
+      modesList: ['Full map mode', 'Fog of war mode', '120 second time limit'],
     },
   }[language];
 
@@ -64,32 +67,28 @@ function GameSection({ language }: GameSectionProps) {
 
       <ImagePlaceholder
         title={text.imageTitle}
-        fileName="game-main.png"
         description={text.imageDescription}
+        imageSrc={jatekImg}
       />
 
       <h3>{text.controls}</h3>
       <ul>
-        <li>W - {text.up}</li>
-        <li>A - {text.left}</li>
-        <li>S - {text.down}</li>
-        <li>D - {text.right}</li>
-        <li>F5 - {text.saveKey}</li>
-        <li>F9 - {text.loadKey}</li>
-        <li>ESC - {text.exitKey}</li>
+        {text.items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
       </ul>
 
       <h3>{text.modes}</h3>
       <ul>
-        <li>{text.fullMap}</li>
-        <li>{text.fogMap}</li>
-        <li>{text.timeLimit}</li>
+        {text.modesList.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
       </ul>
 
       <ImagePlaceholder
         title={text.fogTitle}
-        fileName="fog-map.png"
         description={text.fogDescription}
+        imageSrc={jatekFedettImg}
       />
 
       <h3>{text.save}</h3>

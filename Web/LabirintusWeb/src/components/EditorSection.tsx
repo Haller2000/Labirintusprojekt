@@ -1,6 +1,9 @@
 import type { Language } from '../App';
 import ImagePlaceholder from './ImagePlaceholder';
 
+import szerkesztoImg from '../../Images/szerkeszto.png';
+import szerkesztoAlImg from '../../Images/szerkesztoal.png';
+
 type EditorSectionProps = {
   language: Language;
 };
@@ -12,7 +15,7 @@ function EditorSection({ language }: EditorSectionProps) {
       intro:
         'A szerkesztő segítségével saját labirintusokat készíthetünk és menthetünk.',
       mainImageTitle: 'Szerkesztő főablak',
-      mainImageDescription: 'A térképszerkesztő felhasználói felülete.',
+      mainImageDescription: 'A térképszerkesztő teljes felhasználói felülete.',
       createTitle: 'Pálya létrehozása',
       createSteps: [
         'Szélesség és magasság megadása',
@@ -30,7 +33,7 @@ function EditorSection({ language }: EditorSectionProps) {
         '. - Üres mező',
       ],
       tilesImageTitle: 'Elemválasztó',
-      tilesImageDescription: 'A használható csempék bemutatása.',
+      tilesImageDescription: 'A szerkesztő bal oldalán található csempék.',
       validationTitle: 'Validálás',
       validationItems: [
         'Terem ellenőrzése',
@@ -45,7 +48,7 @@ function EditorSection({ language }: EditorSectionProps) {
       intro:
         'The editor allows users to create, edit and save custom labyrinth maps.',
       mainImageTitle: 'Editor main window',
-      mainImageDescription: 'The user interface of the map editor.',
+      mainImageDescription: 'The full user interface of the map editor.',
       createTitle: 'Creating a map',
       createSteps: [
         'Enter the width and height',
@@ -63,7 +66,7 @@ function EditorSection({ language }: EditorSectionProps) {
         '. - Empty field',
       ],
       tilesImageTitle: 'Tile selector',
-      tilesImageDescription: 'Presentation of the available tiles.',
+      tilesImageDescription: 'The available tiles on the left side of the editor.',
       validationTitle: 'Validation',
       validationItems: [
         'Checking treasure rooms',
@@ -78,13 +81,13 @@ function EditorSection({ language }: EditorSectionProps) {
   return (
     <section id="szerkeszto" className="section dark">
       <h2>{text.title}</h2>
-
       <p>{text.intro}</p>
 
       <ImagePlaceholder
         title={text.mainImageTitle}
-        fileName="editor-main.png"
+        fileName="szerkeszto.png"
         description={text.mainImageDescription}
+        imageSrc={szerkesztoImg}
       />
 
       <h3>{text.createTitle}</h3>
@@ -105,8 +108,9 @@ function EditorSection({ language }: EditorSectionProps) {
 
       <ImagePlaceholder
         title={text.tilesImageTitle}
-        fileName="tiles.png"
+        fileName="szerkesztoal.png"
         description={text.tilesImageDescription}
+        imageSrc={szerkesztoAlImg}
       />
 
       <h3>{text.validationTitle}</h3>

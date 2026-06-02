@@ -342,3 +342,63 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+.image-box {
+  margin: 34px 0;
+}
+
+.image-box img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  display: block;
+  border-radius: 16px;
+  border: 2px solid #22c55e;
+  background: #020617;
+  padding: 12px;
+}
+
+.image-box figcaption {
+  margin-top: 12px;
+  color: #d1d5db;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.image-box figcaption strong {
+  color: white;
+  font-size: 18px;
+}
+
+.image-box figcaption span {
+  font-size: 15px;
+}
+
+.image-box {
+  margin: 34px 0;
+}
+
+.image-box img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  display: block;
+  border-radius: 16px;
+  border: 2px solid #22c55e;
+  background: #020617;
+  padding: 12px;
+}
+
+.image-box figcaption {
+  margin-top: 12px;
+  color: #d1d5db;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.image-box figcaption strong {
+  color: white;
+  font-size: 18px;
+}

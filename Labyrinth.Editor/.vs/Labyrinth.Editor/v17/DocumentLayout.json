@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Anti\\source\\repos\\Labyrinth.Editor\\",
+  "WorkspaceRootPath": "C:\\Users\\Anti\\Documents\\Labirintusprojekt\\Labyrinth.Editor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89FB3C99-6457-4A56-82ED-E2ECFC94818C}|Labyrinth.Editor.csproj|c:\\users\\anti\\source\\repos\\labyrinth.editor\\services\\mapvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{89FB3C99-6457-4A56-82ED-E2ECFC94818C}|Labyrinth.Editor.csproj|c:\\users\\anti\\documents\\labirintusprojekt\\labyrinth.editor\\services\\mapvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89FB3C99-6457-4A56-82ED-E2ECFC94818C}|Labyrinth.Editor.csproj|solutionrelative:services\\mapvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89FB3C99-6457-4A56-82ED-E2ECFC94818C}|Labyrinth.Editor.csproj|c:\\users\\anti\\source\\repos\\labyrinth.editor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{89FB3C99-6457-4A56-82ED-E2ECFC94818C}|Labyrinth.Editor.csproj|c:\\users\\anti\\documents\\labirintusprojekt\\labyrinth.editor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89FB3C99-6457-4A56-82ED-E2ECFC94818C}|Labyrinth.Editor.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89FB3C99-6457-4A56-82ED-E2ECFC94818C}|Labyrinth.Editor.csproj|c:\\users\\anti\\source\\repos\\labyrinth.editor\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{89FB3C99-6457-4A56-82ED-E2ECFC94818C}|Labyrinth.Editor.csproj|c:\\users\\anti\\documents\\labirintusprojekt\\labyrinth.editor\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{89FB3C99-6457-4A56-82ED-E2ECFC94818C}|Labyrinth.Editor.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -38,11 +38,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MapValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Anti\\source\\repos\\Labyrinth.Editor\\Services\\MapValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Anti\\Documents\\Labirintusprojekt\\Labyrinth.Editor\\Services\\MapValidator.cs",
               "RelativeDocumentMoniker": "Services\\MapValidator.cs",
-              "ToolTip": "C:\\Users\\Anti\\source\\repos\\Labyrinth.Editor\\Services\\MapValidator.cs",
+              "ToolTip": "C:\\Users\\Anti\\Documents\\Labirintusprojekt\\Labyrinth.Editor\\Services\\MapValidator.cs",
               "RelativeToolTip": "Services\\MapValidator.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAADwv7EAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAADwv7EAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-01T07:33:59.138Z",
               "EditorCaption": ""
@@ -51,22 +51,21 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Anti\\source\\repos\\Labyrinth.Editor\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Anti\\Documents\\Labirintusprojekt\\Labyrinth.Editor\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Anti\\source\\repos\\Labyrinth.Editor\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Anti\\Documents\\Labirintusprojekt\\Labyrinth.Editor\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAAAMwFIAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T08:03:51.41Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T08:03:51.41Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Anti\\source\\repos\\Labyrinth.Editor\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Anti\\Documents\\Labirintusprojekt\\Labyrinth.Editor\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Anti\\source\\repos\\Labyrinth.Editor\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Anti\\Documents\\Labirintusprojekt\\Labyrinth.Editor\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-05-21T08:38:07.1Z"

@@ -1,17 +1,17 @@
 type ImagePlaceholderProps = {
   title: string;
-  fileName: string;
   description: string;
+  imageSrc: string;
 };
 
-function ImagePlaceholder({ title, fileName, description }: ImagePlaceholderProps) {
+function ImagePlaceholder({ title, description, imageSrc }: ImagePlaceholderProps) {
   return (
-    <figure className="image-placeholder">
-      <div className="placeholder-icon">▧</div>
+    <figure className="image-box">
+      <img src={imageSrc} alt={title} />
+
       <figcaption>
         <strong>{title}</strong>
         <span>{description}</span>
-        <code>{fileName}</code>
       </figcaption>
     </figure>
   );
